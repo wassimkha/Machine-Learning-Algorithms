@@ -31,11 +31,6 @@ while iteration < 3000:
     theta_1 = theta_1 - (alpha*m2*prediction_theta_1)
 
     iteration += 1
-    print('Cost function value: '+ str(J))
-    print('Theta 0: '+ str(theta_0))
-    print('Theta 1: '+ str(theta_1))
 
-#Printing the values to graph
-plt.plot([0,25], [theta_0, theta_1*25+theta_0])
-plt.scatter(data[:,0], data[:,1])
-plt.show()
+print('Theta0: ' + str(theta_0))
+print('Theta1: ' + str(theta_1))
