@@ -32,5 +32,5 @@ while iteration < 10000:
     theta = theta - alpha * dj
 
 print('Theta0: {:f}'.format(theta[0][0]))
-print('Theta0: {:f}'.format(theta[0][1]))
-print('Theta0: {:f}'.format(theta[0][2]))
+print('Theta1: {:f}'.format(theta[0][1]))
+print('Theta2: {:f}'.format(theta[0][2]))

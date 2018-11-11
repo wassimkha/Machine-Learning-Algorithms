@@ -17,5 +17,5 @@ x = np.concatenate((ones, data[:,0].reshape(-1,1), data[:,1].reshape(-1,1)), axi
 theta = np.linalg.inv(x.T @ x) @ (x.T @ y)
 
 print('Theta0: {:f}'.format(theta[0][0]))
-print('Theta0: {:f}'.format(theta[1][0]))
-print('Theta0: {:f}'.format(theta[2][0]))
+print('Theta1: {:f}'.format(theta[1][0]))
+print('Theta2: {:f}'.format(theta[2][0]))

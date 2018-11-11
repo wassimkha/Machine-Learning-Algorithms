@@ -22,4 +22,5 @@ while iteration > 0:
     print(J)
     dj = (m*-2) * ((error) @ x)
     theta = theta - alpha * dj
-print(theta)
+print('Theta0: {:f}'.format(theta[0][0]))
+print('Theta1: {:f}'.format(theta[0][1]))
