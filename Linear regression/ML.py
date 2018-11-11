@@ -4,33 +4,22 @@ import matplotlib.pyplot as plt
 # Import the data we will work with
 data = np.loadtxt('sample.txt', delimiter=",")
 
-#Setting up the starting variables
-theta_0 = 120
-theta_1 = 120
-alpha = 0.02
-iteration = 0
-m2 = 1 / (data.shape[0])
-m = 1 / (2*data.shape[0])
+#Adding a column of ones
+ones = np.ones((len(data),1))
+x = np.concatenate((ones, data[:,0].reshape(-1,1)), axis=1)
 
-#Setting up the iteration loop
-while iteration < 3000:
-    prediction_cost_function = 0
-    prediction_theta_0 = 0
-    prediction_theta_1 = 0
-    # cost function
-    for i in range(data.shape[0]):
-        h = (data[i,0]*theta_1 + theta_0)
-        prediction_theta_0 += (h-data[i,1])
-        prediction_theta_1 += ((h-data[i,1])*data[i,0])
-        prediction_cost_function += (h-data[i,1])**2
-    J = m*prediction_cost_function # This is the cost function (or error function)
-    # Gradient descent
-    #theta_0
-    theta_0 = theta_0 - (alpha*m2*prediction_theta_0)
-    #theta_one
-    theta_1 = theta_1 - (alpha*m2*prediction_theta_1)
+#Creating the y vector
+y = data[:,1].reshape(-1,1)
 
-    iteration += 1
-
-print('Theta0: ' + str(theta_0))
-print('Theta1: ' + str(theta_1))
+theta = np.array([100,100])
+iteration = 5000
+alpha = 0.01
+m = 1 / (len(x))
+while iteration > 0:
+    iteration -= 1
+    error = y.T - (theta @ x.T)
+    J = m * (error @ error.T)
+    print(J)
+    dj = (m*-2) * ((error) @ x)
+    theta = theta - alpha * dj
+print(theta)
