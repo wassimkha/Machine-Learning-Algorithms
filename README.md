@@ -1,2 +1,2 @@
-# Simple-linear-regression-algorithm
-This is a simple regression algorithm written in python. I used a sample data provided in the andrew ng's machine learning course
+# Machine learning algorithms
+These are implementations of some of the most popular machine learning algorithms, most of the data and theory was provided by andrew ng in his machine learning course.
